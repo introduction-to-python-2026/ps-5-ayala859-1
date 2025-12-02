@@ -2,11 +2,34 @@
 
 
 def split_before_uppercases(formula):
-    pass  # replace the pass with your code
-
+    start = 0
+    split_formula = []
+    
+    for end in range(1, len(formula)):
+        if formula[end].isupper():     
+            x = formula[start:end]     
+            split_formula.append(x)
+            start = end                
+    
+    if formula != "":
+        split_formula.append(formula[start:])
+        return split_formula
+    else:
+        return []
+        
 def split_at_digit(formula):
-    pass  # replace the pass with your code
-
+  digit_location = 1
+  for char in formula[1:]:
+    if char.isdigit():
+      break
+    digit_location += 1
+  if digit_location == len(formula):
+    return (formula,1)
+  else:
+    perfix = formula[:digit_location]
+    numeric = int(formula[digit_location:])
+    return (perfix,numeric)
+      
 def count_atoms_in_molecule(molecular_formula):
     """Takes a molecular formula (string) and returns a dictionary of atom counts.  
     Example: 'H2O' → {'H': 2, 'O': 1}"""
