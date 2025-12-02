@@ -14,22 +14,6 @@ def split_before_uppercases(formula):
     else:
         return []
 
-def split_before_uppercases(formula):
-    start = 0
-    end = 0
-    split_formula = []
-    for end in range(1, len(formula)):
-        if formula[end].isupper():
-            x = formula[start:end]
-            split_formula.append(x)
-            start = end
-    if formula != "":
-        x = formula[start:]
-        split_formula.append(x)
-        return split_formula
-    else:
-        return []
-
 
 def split_at_digit(formula):
     digit_location = 1
