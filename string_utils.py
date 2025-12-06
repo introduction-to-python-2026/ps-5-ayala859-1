@@ -40,6 +40,3 @@ def count_atoms_in_molecule(molecular_formula):
 
     return dict_atom_counts
 
-
-formula = "H2C"
-print(count_atoms_in_molecule(formula))
