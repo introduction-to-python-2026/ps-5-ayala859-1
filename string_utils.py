@@ -39,7 +39,8 @@ def count_atoms_in_molecule(molecular_formula):
         dict_atom_counts[k[0]] = k[1]
 
     return dict_atom_counts
-    def parse_chemical_reaction(reaction_equation):
+
+def parse_chemical_reaction(reaction_equation):
     """Takes a reaction equation (string) and returns reactants and products as lists.  
     Example: 'H2 + O2 -> H2O' → (['H2', 'O2'], ['H2O'])"""
     reaction_equation = reaction_equation.replace(" ", "")  # Remove spaces for easier parsing
@@ -53,4 +54,3 @@ def count_atoms_in_reaction(molecules_list):
     for molecule in molecules_list:
         molecules_atoms_count.append(count_atoms_in_molecule(molecule))
     return molecules_atoms_count
-
